@@ -14,6 +14,7 @@ installing fermipy/STs see this `page
 To install a tagged release from pip:
 
 .. code:: bash
+
    $ pip install dsphpipe
 
 To install a development version from source:
@@ -21,7 +22,7 @@ To install a development version from source:
 .. code:: bash
 
    $ git clone https://github.com/fermiPy/dsphpipe.git
-   $ cd dmsky
+   $ cd dsphpipe
    # To install the current commit
    $ python setup.py install
    # To install for development/debugging
