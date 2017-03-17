@@ -1,0 +1,84 @@
+data:
+
+  evfile : /u/gl/mdwood/ki20/mdwood/fermi/data/P8_SOURCE_V6/P8R2_SOURCE_239557414_492018214_z100_r180_gti_ft1.lst
+  scfile : /nfs/slac/g/ki/ki20/cta/mdwood/fermi/data/P8_P302_BASE/P8_P302_SOURCE_239557414_492018214_ft2.fits
+  ltcube : /nfs/slac/g/ki/ki20/cta/mdwood/fermi/data/P8_SOURCE_V6/P8R2_SOURCE_239557414_492018214_z100_r180_gti_ft1_gtltcube.fits
+
+logging : 
+
+  verbosity : 3
+
+binning:
+
+  # Binning
+  roiwidth   : 10.0
+  npix       : null
+  binsz      : 0.05 # spatial bin size in deg
+  binsperdec : 8   # nb energy bins per decade
+  coordsys   : 'GAL'
+  
+selection:
+
+  # Data selections
+  emin    : 500.
+  emax    : 500000.
+  zmax    : 100
+  evclass : 128
+  evtype  : 3
+  tmin    : 239557414
+  tmax    : 492018214 # 8 years
+
+fileio : 
+  usescratch : True
+
+gtlike:
+  # IRFs
+  edisp : True
+  irfs : 'P8R2_SOURCE_V6'
+  edisp_disable : ['isodiff','galdiff']
+  llscan_npts : 9
+
+# Settings for ROI model
+model:
+
+  # Include catalog sources within this distance from the ROI center
+  src_radius  : null
+
+  # Include catalog sources within a box of width roisrc.
+  src_roiwidth : 15.0
+
+  galdiff  : '$FERMI_DIFFUSE_DIR/gll_iem_v06.fits'
+  isodiff  : 'iso_P8R2_SOURCE_V6_v06.txt'
+  limbdiff : null
+
+  merge_sources : False
+
+  # List of catalogs to be used in the model.
+  catalogs : 
+    - '/u/gl/mdwood/fermi/catalogs/gll_psc_v16_ext.fit'
+    - 'lmc_psc_v0.fit'
+
+  extdir : '/u/gl/mdwood/fermi/catalogs/Extended_archive_v16'
+
+components: null
+
+extension:
+  width_min : 0.00316227766
+  width_max : 1.99526231
+  width_nstep : 29
+  spatial_model : 'RadialGaussian'
+
+plotting:
+  graticule_radii: [0.5,1.0,2.0]
+  cmap: 'magma'
+  catalogs: ['/u/gl/mdwood/ki20/mdwood/fermi//catalogs/P302_7years_uw982_assoc_v7r1.fits']
+
+localize:
+  dtheta_max : 0.40
+  nstep : 5
+
+roiopt:
+  shape_ts_threshold : 25.0
+
+optimizer:
+  optimizer : 'MINUIT'
