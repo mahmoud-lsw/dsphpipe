@@ -12,7 +12,7 @@ setup(
     license='BSD',
     packages=find_packages(),
     include_package_data=True,
-    url="https://github.com/fermi-lat/dsphpipe",
+    url="https://github.com/fermiPy/dsphpipe",
     classifiers=[
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: BSD License',
@@ -25,7 +25,7 @@ setup(
     ],
     scripts=[],
     entry_points={'console_scripts': [
-        'dsphpipe-quicklook = dsphpipe.scripts.quick_analysis:main'
+        'dsphpipe-analyze-roi = dsphpipe.scripts.analyze_roi:main'
     ]},
     install_requires=[
         'numpy >= 1.6.1',
