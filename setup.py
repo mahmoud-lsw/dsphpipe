@@ -36,6 +36,7 @@ setup(
         'pyyaml',
         'healpy',
         'wcsaxes',
+        'dmsky'
     ],
     extras_require=dict(
         all=[],
