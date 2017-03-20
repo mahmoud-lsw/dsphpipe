@@ -1,6 +1,11 @@
 
 dsphpipe
 ========
+
+.. image:: http://img.shields.io/pypi/v/dsphpipe.svg?text=version
+    :target: https://pypi.python.org/pypi/dsphpipe/
+    :alt: Latest release
+
 Pipeline Scripts for LAT Dwarf Analysis
 
 Installation
